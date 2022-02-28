@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-e266684df1ca221754d25b052a261d4f.stex"
+path="res://.import/fill.png-0c1468da1c061cf61582df62646a2746.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/scratch_canvas/icon.png"
-dest_files=[ "res://.import/icon.png-e266684df1ca221754d25b052a261d4f.stex" ]
+source_file="res://addons/canvas/fill.png"
+dest_files=[ "res://.import/fill.png-0c1468da1c061cf61582df62646a2746.stex" ]
 
 [params]
 

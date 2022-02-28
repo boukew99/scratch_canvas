@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="scratch_canvas"
-config/icon="res://addons/scratch_canvas/icon.png"
+config/icon="res://addons/canvas/icon.png"
 
 [physics]
 
