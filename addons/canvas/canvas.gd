@@ -31,6 +31,8 @@ func _on_CaptureTimer_timeout():
 	tex.create_from_image(image)
 	texture_normal = tex
 
-	get_tree().call_group("line", "queue_free")
+	# free Line2D nodes
+	for index in range(1, get_child_count()):
+		get_child(index).queue_free()
 
 
