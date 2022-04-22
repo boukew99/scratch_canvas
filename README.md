@@ -3,7 +3,7 @@ Canvas for drawing in [Godot Engine](https://godotengine.org) with mouse, trackp
 
 ![loc](https://img.shields.io/tokei/lines/github/boukew99/scratch_canvas) ![size](https://img.shields.io/github/repo-size/boukew99/scratch_canvas) 
 
-![screenshot](https://raw.githubusercontent.com/boukew99/scratch_canvas/main/screenshot/Screenshot%202022-02-28%20130219.png)
+![screenshot](https://raw.githubusercontent.com/boukew99/scratch_canvas/main/screenshot/Screenshot%202022-04-22.png)
 
 ## Usage
 * The Canvas is an extension of [TextureButton](https://docs.godotengine.org/en/stable/classes/class_texturebutton.html?highlight=textureButton) and uses [Line2D](https://docs.godotengine.org/en/stable/classes/class_line2d.html?highlight=line2d) for drawing. 
