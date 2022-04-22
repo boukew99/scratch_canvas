@@ -1,5 +1,19 @@
-You can edit the line by setting the properties of "line.tscn" and the canvas background by "self_modulate". 
+# Scratch Canvas ![icon](https://raw.githubusercontent.com/boukew99/scratch_canvas/main/addons/canvas/icon.png)
+Canvas for drawing in [Godot Engine](https://godotengine.org) with mouse, trackpad, touch and pen. Also inludes examples of optimization and use. 
 
-Note that it uses a toggle mode of drawing, which is less strenuous with a mouse and also usable with a trackpad.
+![loc](https://img.shields.io/tokei/lines/github/boukew99/scratch_canvas) ![size](https://img.shields.io/github/repo-size/boukew99/scratch_canvas) 
 
 ![screenshot](https://raw.githubusercontent.com/boukew99/scratch_canvas/main/screenshot/Screenshot%202022-02-28%20130219.png)
+
+## Usage
+* The Canvas is an extension of [TextureButton](https://docs.godotengine.org/en/stable/classes/class_texturebutton.html?highlight=textureButton) and uses [Line2D](https://docs.godotengine.org/en/stable/classes/class_line2d.html?highlight=line2d) for drawing. 
+* The drawing line can be edited and some examples are given.
+* The canvas with background can be adjusted with a different color.
+* The optimized canvas captures the screen and uses that as the texture of the Canvas. Then the lines are freed, to decrease drawing cost.
+* Note for less strenuous drawing with mouse and trackpad, you could enable toggle mode.
+
+## License
+[MIT](LICENSE)
+
+## Contributing
+Leave a issue if there is one.
