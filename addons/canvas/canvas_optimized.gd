@@ -1,21 +1,6 @@
-extends TextureButton
+extends "canvas.gd"
 
 var max_lines = 10 # then lines2capture 
-var line = preload("line.tscn")
-var current_line
-
-func _on_Canvas_toggled(button_pressed):
-	if button_pressed:
-		current_line = line.instance()
-		add_child(current_line)
-	else:
-		if get_child_count() > max_lines:
-			lines2capture()
-
-func _on_Canvas_gui_input(event):
-	if event is InputEventMouseMotion and event.relative and pressed:
-		current_line.add_point(event.position)
-
 
 # capture has less drawing cost 
 func lines2capture():
@@ -36,3 +21,7 @@ func lines2capture():
 		get_child(index).queue_free()
 
 
+
+func _on_CanvasOptimized_button_up():
+	if get_child_count() > max_lines:
+		lines2capture()
