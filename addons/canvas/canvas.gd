@@ -1,5 +1,7 @@
 extends TextureButton 
 
+signal drawing(line)
+
 var line = preload("line.tscn")
 var current_line
 
@@ -12,4 +14,4 @@ func _on_Canvas_gui_input(event):
 func _on_Canvas_button_down():
 	current_line = line.instance()
 	add_child(current_line)
-
+	emit_signal("drawing", current_line)
