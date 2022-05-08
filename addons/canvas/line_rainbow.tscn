@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/canvas/line.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/canvas/rainbow.tres" type="Gradient" id=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[node name="RainbowLine2D" instance=ExtResource( 1 )]
+width_curve = SubResource( 1 )
+gradient = ExtResource( 2 )
