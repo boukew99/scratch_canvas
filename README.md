@@ -1,5 +1,5 @@
 # Scratch Canvas ![icon](https://raw.githubusercontent.com/boukew99/scratch_canvas/main/addons/canvas/icon.png)
-Canvas for drawing in [Godot Engine](https://godotengine.org) with mouse, trackpad, touch and pen. Also inludes examples of optimization and use. 
+Canvas for drawing in [Godot Engine](https://godotengine.org) with mouse, trackpad, touch and pen. Also inludes examples of optimization and use. Is used and tested in [Scratch Animator](https://github.com/boukew99/scratch_animator).
 
 ![loc](https://img.shields.io/tokei/lines/github/boukew99/scratch_canvas) ![size](https://img.shields.io/github/repo-size/boukew99/scratch_canvas) 
 
