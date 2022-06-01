@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="DashLine2D" type="Line2D"]
+width = 4.0
+default_color = Color( 0.156863, 0.156863, 0.196078, 1 )
+texture = null
+texture_mode = 1
