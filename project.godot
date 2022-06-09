@@ -11,9 +11,9 @@ config_version=4
 [application]
 
 config/name="scratch_canvas"
-run/main_scene="res://addons/canvas/scratch_drawer/scratch_drawer.tscn"
+run/main_scene="res://addons/scratch_drawer/scratch_drawer.tscn"
 run/low_processor_mode=true
-config/icon="res://addons/canvas/icon.png"
+config/icon="res://addons/canvas/scratch_canvas.png"
 
 [physics]
 
