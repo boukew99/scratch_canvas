@@ -1,6 +1,8 @@
 # Scratch Canvas ![icon](scratch_canvas.png)
 Canvas for drawing in [Godot Engine](https://godotengine.org) with mouse, trackpad, touch and pen.
 
+~94 lines of code | ~6.2 kB
+
 ## Usage
 * Instance it in your scene
 * The Canvas is an extension of [TextureButton](https://docs.godotengine.org/en/stable/classes/class_texturebutton.html?highlight=textureButton) and uses [Line2D](https://docs.godotengine.org/en/stable/classes/class_line2d.html?highlight=line2d) for drawing. 
