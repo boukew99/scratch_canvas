@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/line_0.png-66a812be5c0b7059a44cb524e69b9091.stex"
+path="res://.import/line_3.png-e724d6424aa9f74ed46316e032f9afc4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/scratch_drawer/line_0.png"
-dest_files=[ "res://.import/line_0.png-66a812be5c0b7059a44cb524e69b9091.stex" ]
+source_file="res://scratch_drawer/line_3.png"
+dest_files=[ "res://.import/line_3.png-e724d6424aa9f74ed46316e032f9afc4.stex" ]
 
 [params]
 

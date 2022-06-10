@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/underline.png-b7cd8b9b3d0b9f40550b555407d7b24a.stex"
+path="res://.import/Clear.png-b60a8e6c52cc2bd3b1a5d3fb65168140.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/scratch_drawer/underline.png"
-dest_files=[ "res://.import/underline.png-b7cd8b9b3d0b9f40550b555407d7b24a.stex" ]
+source_file="res://scratch_drawer/Clear.png"
+dest_files=[ "res://.import/Clear.png-b60a8e6c52cc2bd3b1a5d3fb65168140.stex" ]
 
 [params]
 

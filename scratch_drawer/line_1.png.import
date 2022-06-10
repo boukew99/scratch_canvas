@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dash.png-b3b22fbd4adbd2678f4fdc7071c1f2aa.stex"
+path="res://.import/line_1.png-e2531131de6a8a99363ef4ae52cb4601.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/scratch_drawer/dash.png"
-dest_files=[ "res://.import/dash.png-b3b22fbd4adbd2678f4fdc7071c1f2aa.stex" ]
+source_file="res://scratch_drawer/line_1.png"
+dest_files=[ "res://.import/line_1.png-e2531131de6a8a99363ef4ae52cb4601.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

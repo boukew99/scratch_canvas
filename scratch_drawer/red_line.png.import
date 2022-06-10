@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/eraser.png-a88021ec5be7ab2f50d8c5a6b059593c.stex"
+path="res://.import/red_line.png-5ccf1128da81782c9d4512ceff86b84a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/scratch_drawer/eraser.png"
-dest_files=[ "res://.import/eraser.png-a88021ec5be7ab2f50d8c5a6b059593c.stex" ]
+source_file="res://scratch_drawer/red_line.png"
+dest_files=[ "res://.import/red_line.png-5ccf1128da81782c9d4512ceff86b84a.stex" ]
 
 [params]
 

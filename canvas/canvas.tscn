@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://addons/canvas/canvas.gd" type="Script" id=1]
+[ext_resource path="res://canvas/canvas.gd" type="Script" id=1]
 
 [node name="Canvas" type="TextureButton"]
 anchor_right = 1.0
