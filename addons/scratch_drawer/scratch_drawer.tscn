@@ -62,39 +62,45 @@ size_flags_horizontal = 3
 alignment = 1
 
 [node name="ColorPickerButton" type="ColorPickerButton" parent="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer"]
-margin_left = 201.0
-margin_right = 245.0
+margin_left = 145.0
+margin_right = 189.0
 margin_bottom = 24.0
 text = "color"
 color = Color( 0.156863, 0.156863, 0.196078, 1 )
 
 [node name="Erase" type="CheckBox" parent="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer"]
-margin_left = 249.0
-margin_right = 289.0
+margin_left = 193.0
+margin_right = 233.0
 margin_bottom = 24.0
 hint_tooltip = "erase"
 icon = ExtResource( 12 )
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer"]
-margin_left = 293.0
-margin_right = 297.0
+margin_left = 237.0
+margin_right = 241.0
 margin_bottom = 24.0
 
 [node name="PerpendicularDistance" type="HSlider" parent="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer"]
-margin_left = 301.0
-margin_right = 501.0
+margin_left = 245.0
+margin_right = 445.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 200, 0 )
-max_value = 20.0
+max_value = 30.0
 step = 0.1
-value = 4.0
+value = 3.0
 
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer"]
-margin_left = 505.0
+margin_left = 449.0
 margin_top = 5.0
-margin_right = 533.0
+margin_right = 477.0
 margin_bottom = 19.0
-text = "04.0"
+text = "03.0"
+
+[node name="ToggleMode" type="CheckBox" parent="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer"]
+margin_left = 481.0
+margin_right = 589.0
+margin_bottom = 24.0
+text = "toggle mode"
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/PanelContainer/HBoxContainer"]
 margin_left = 868.0
@@ -180,7 +186,7 @@ icon = ExtResource( 13 )
 margin_top = 112.0
 margin_right = 40.0
 margin_bottom = 136.0
-hint_tooltip = "width curve"
+hint_tooltip = "dash"
 group = SubResource( 4 )
 icon = ExtResource( 16 )
 
@@ -188,7 +194,7 @@ icon = ExtResource( 16 )
 margin_top = 140.0
 margin_right = 40.0
 margin_bottom = 164.0
-hint_tooltip = "width curve"
+hint_tooltip = "underline, best with full value colors"
 group = SubResource( 4 )
 icon = ExtResource( 7 )
 
@@ -225,7 +231,7 @@ icon = ExtResource( 8 )
 margin_top = 260.0
 margin_right = 40.0
 margin_bottom = 284.0
-hint_tooltip = "width curve"
+hint_tooltip = "road"
 group = SubResource( 4 )
 icon = ExtResource( 5 )
 
@@ -238,7 +244,7 @@ margin_bottom = 292.0
 margin_top = 296.0
 margin_right = 40.0
 margin_bottom = 320.0
-hint_tooltip = "width curve"
+hint_tooltip = "red subtraction"
 group = SubResource( 4 )
 icon = ExtResource( 4 )
 
@@ -246,7 +252,7 @@ icon = ExtResource( 4 )
 margin_top = 324.0
 margin_right = 40.0
 margin_bottom = 348.0
-hint_tooltip = "width curve"
+hint_tooltip = "green subtraction"
 group = SubResource( 4 )
 icon = ExtResource( 10 )
 
@@ -254,7 +260,7 @@ icon = ExtResource( 10 )
 margin_top = 352.0
 margin_right = 40.0
 margin_bottom = 376.0
-hint_tooltip = "width curve"
+hint_tooltip = "blue subtraction"
 group = SubResource( 4 )
 icon = ExtResource( 6 )
 
@@ -271,6 +277,7 @@ size_flags_horizontal = 3
 [connection signal="color_changed" from="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer/ColorPickerButton" to="." method="_on_ColorPickerButton_color_changed"]
 [connection signal="toggled" from="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer/Erase" to="." method="_on_Erase_toggled"]
 [connection signal="value_changed" from="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer/PerpendicularDistance" to="." method="_on_PerpendicularDistance_value_changed"]
+[connection signal="toggled" from="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer/ToggleMode" to="." method="_on_ToggleMode_toggled"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/Undo" to="." method="_on_Undo_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/Redo" to="." method="_on_Redo_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/Clear" to="." method="_on_Clear_pressed"]
@@ -287,3 +294,4 @@ size_flags_horizontal = 3
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Red" to="." method="_on_Red_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Green" to="." method="_on_Green_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Blue" to="." method="_on_Blue_pressed"]
+[connection signal="drawing" from="VBoxContainer/HBoxContainer/ColorRect/Canvas" to="." method="_on_Canvas_drawing"]

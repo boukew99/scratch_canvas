@@ -8,7 +8,7 @@ var line = preload("line.tscn")
 var current_line
 
 var velocity = Vector2.ZERO
-var perpendicular_distance = 4
+var perpendicular_distance = 3
 var time = UndoRedo.new()
 
 var points_saved = 0

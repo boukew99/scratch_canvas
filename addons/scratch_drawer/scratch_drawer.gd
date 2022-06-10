@@ -1,7 +1,8 @@
 extends Panel
 
+const blank_color = Color(0.156863,0.156863,0.196078,1) # default line color
 var erase = false
-var line_color = Color("#282832") # default line color
+var line_color = blank_color 
 var saved_image
 
 onready var clear_color = $VBoxContainer/HBoxContainer/ColorRect.color
@@ -63,7 +64,7 @@ func _on_Road_pressed():
 
 
 func _on_Canvas_drawing(line):
-	if line.default_color == Color(0.156863,0.156863,0.196078,1):
+	if line.default_color == blank_color:
 		line.default_color = clear_color if erase else line_color
 
 
@@ -101,3 +102,7 @@ func _on_Export_pressed():
 
 func _on_Capture_pressed():
 	canvas.capture_lines()
+
+
+func _on_ToggleMode_toggled(button_pressed):
+	canvas.toggle_mode = button_pressed
