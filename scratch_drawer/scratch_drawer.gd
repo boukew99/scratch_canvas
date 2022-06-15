@@ -3,16 +3,20 @@ extends Panel
 const blank_color = Color(0.156863,0.156863,0.196078,1) # default line color
 var erase = false
 var line_color = blank_color 
+var line_width = 5
+var front = false
 var saved_image
 
-onready var clear_color = $VBoxContainer/HBoxContainer/ColorRect.color
-onready var canvas = $VBoxContainer/HBoxContainer/ColorRect/Canvas
+onready var background = $VBoxContainer/HBoxContainer/ScrollContainer/ColorRect
+onready var canvas = $VBoxContainer/HBoxContainer/ScrollContainer/ColorRect/Canvas
 onready var undo = $VBoxContainer/PanelContainer/HBoxContainer/Undo
 onready var redo = $VBoxContainer/PanelContainer/HBoxContainer/Redo
 onready var perpendicular_distance_label = $VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer/Label
+onready var width = $VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer2/VBoxContainer/Width
 
 func _ready():
 	canvas.time.connect("version_changed", self, "_on_Canvas_version_changed")
+	$Configuration.popup_centered()
 	
 func _on_Line_pressed():
 	canvas.line = preload("../canvas/line.tscn")
@@ -65,8 +69,11 @@ func _on_Road_pressed():
 
 func _on_Canvas_drawing(line):
 	if line.default_color == blank_color:
-		line.default_color = clear_color if erase else line_color
-
+		line.default_color = background.color if erase else line_color
+	if line.width == 4:
+		line.width = line_width
+	if front:
+		canvas.move_child(line, 0)
 
 func _on_Erase_toggled(button_pressed):
 	erase = button_pressed
@@ -106,3 +113,43 @@ func _on_Capture_pressed():
 
 func _on_ToggleMode_toggled(button_pressed):
 	canvas.toggle_mode = button_pressed
+
+
+func _on_Width_item_selected(index):
+	line_width = fibonacci_of(index + 2)
+	print(line_width)
+	
+func fibonacci_of(n):
+	if n in [0, 1]:
+		return n
+	return fibonacci_of(n - 1) + + fibonacci_of(n - 2)
+
+func _on_IncreaseWidth_pressed():
+	width.selected += 1
+	_on_Width_item_selected(width.selected)
+
+
+func _on_DecreaseWidth_pressed():
+	width.selected -= 1
+	_on_Width_item_selected(width.selected)
+
+
+func _on_BackgroundPickerButton_color_changed(color):
+	background.color = color
+
+
+func _on_OK_pressed():
+	_on_Export_pressed()
+
+
+func _on_Height_value_changed(value):
+	background.rect_min_size.y = value
+
+
+func _on_Pages_value_changed(value):
+	var height = $VBoxContainer/HBoxContainer/ScrollContainer.rect_size.y
+	background.rect_min_size.y = height * value
+
+
+func _on_MoveFront_toggled(button_pressed):
+	front = button_pressed

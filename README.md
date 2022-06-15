@@ -6,4 +6,3 @@ Canvas for drawing in [Godot Engine](https://godotengine.org) with mouse, trackp
 ## Aim
 Have an adjustable canvas scene that you can just instance and use.
 
-

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scratch_drawer/scratch_drawer.gd" type="Script" id=1]
 [ext_resource path="res://scratch_drawer/line_1.png" type="Texture" id=2]
@@ -16,6 +16,10 @@
 [ext_resource path="res://scratch_drawer/line_5.png" type="Texture" id=14]
 [ext_resource path="res://scratch_drawer/Clear.png" type="Texture" id=15]
 [ext_resource path="res://scratch_drawer/dash.png" type="Texture" id=16]
+[ext_resource path="res://scratch_drawer/Image.png" type="Texture" id=17]
+[ext_resource path="res://scratch_drawer/line_2.png" type="Texture" id=18]
+[ext_resource path="res://scratch_drawer/undo.png" type="Texture" id=19]
+[ext_resource path="res://scratch_drawer/redo.png" type="Texture" id=20]
 
 [sub_resource type="ButtonGroup" id=4]
 
@@ -38,51 +42,67 @@ margin_top = 7.0
 margin_right = 1017.0
 margin_bottom = 31.0
 
+[node name="OK" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+margin_right = 31.0
+margin_bottom = 24.0
+text = "OK"
+
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+margin_left = 35.0
+margin_right = 39.0
+margin_bottom = 24.0
+
+[node name="Name" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+margin_left = 43.0
+margin_top = 5.0
+margin_right = 95.0
+margin_bottom = 19.0
+text = "Untitled"
+
 [node name="Export" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer"]
-margin_right = 53.0
+visible = false
+margin_left = 53.0
+margin_right = 124.0
 margin_bottom = 24.0
 text = "export"
+icon = ExtResource( 17 )
 
 [node name="Capture" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer"]
-margin_left = 57.0
-margin_right = 117.0
+visible = false
+margin_left = 35.0
+margin_right = 95.0
 margin_bottom = 24.0
 text = "capture"
 
-[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/PanelContainer/HBoxContainer"]
-margin_left = 121.0
-margin_right = 125.0
-margin_bottom = 24.0
-
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
-margin_left = 129.0
-margin_right = 864.0
+margin_left = 99.0
+margin_right = 828.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="ColorPickerButton" type="ColorPickerButton" parent="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer"]
-margin_left = 145.0
-margin_right = 189.0
+margin_left = 111.0
+margin_right = 155.0
 margin_bottom = 24.0
 text = "color"
 color = Color( 0.156863, 0.156863, 0.196078, 1 )
 
 [node name="Erase" type="CheckBox" parent="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer"]
-margin_left = 193.0
-margin_right = 233.0
+margin_left = 159.0
+margin_right = 199.0
 margin_bottom = 24.0
 hint_tooltip = "erase"
 icon = ExtResource( 12 )
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer"]
-margin_left = 237.0
-margin_right = 241.0
+margin_left = 203.0
+margin_right = 207.0
 margin_bottom = 24.0
 
 [node name="PerpendicularDistance" type="HSlider" parent="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer"]
-margin_left = 245.0
-margin_right = 445.0
+margin_left = 211.0
+margin_right = 411.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 200, 0 )
 max_value = 30.0
@@ -90,36 +110,44 @@ step = 0.1
 value = 3.0
 
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer"]
-margin_left = 449.0
+margin_left = 415.0
 margin_top = 5.0
-margin_right = 477.0
+margin_right = 443.0
 margin_bottom = 19.0
 text = "03.0"
 
 [node name="ToggleMode" type="CheckBox" parent="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer"]
-margin_left = 481.0
-margin_right = 589.0
+margin_left = 447.0
+margin_right = 555.0
 margin_bottom = 24.0
 text = "toggle mode"
 
+[node name="MoveFront" type="CheckBox" parent="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer"]
+margin_left = 559.0
+margin_right = 617.0
+margin_bottom = 24.0
+text = "front"
+
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/PanelContainer/HBoxContainer"]
-margin_left = 868.0
-margin_right = 872.0
+margin_left = 832.0
+margin_right = 836.0
 margin_bottom = 24.0
 
 [node name="Undo" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer"]
-margin_left = 876.0
-margin_right = 922.0
+margin_left = 840.0
+margin_right = 904.0
 margin_bottom = 24.0
 disabled = true
 text = "Undo"
+icon = ExtResource( 19 )
 
 [node name="Redo" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer"]
-margin_left = 926.0
+margin_left = 908.0
 margin_right = 970.0
 margin_bottom = 24.0
 disabled = true
 text = "Redo"
+icon = ExtResource( 20 )
 
 [node name="VSeparator2" type="VSeparator" parent="VBoxContainer/PanelContainer/HBoxContainer"]
 margin_left = 974.0
@@ -138,19 +166,53 @@ margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
-margin_top = 84.0
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 margin_right = 54.0
-margin_bottom = 474.0
-size_flags_vertical = 4
+margin_bottom = 558.0
+alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 41.0
+margin_right = 54.0
+margin_bottom = 123.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 47.0
+margin_bottom = 75.0
+
+[node name="IncreaseWidth" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer2/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 20.0
+text = "+"
+
+[node name="Width" type="OptionButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer2/VBoxContainer"]
+margin_top = 24.0
+margin_right = 40.0
+margin_bottom = 44.0
+text = "5"
+items = [ "1", null, false, 0, null, "2", null, false, 1, null, "3", null, false, 2, null, "5", null, false, 3, null, "8", null, false, 4, null, "13", null, false, 5, null, "21", null, false, 6, null, "34", null, false, 7, null, "55", null, false, 8, null ]
+selected = 3
+
+[node name="DecreaseWidth" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer2/VBoxContainer"]
+margin_top = 48.0
+margin_right = 40.0
+margin_bottom = 68.0
+text = "-"
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 127.0
+margin_right = 54.0
+margin_bottom = 517.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 47.0
 margin_bottom = 383.0
 
-[node name="Line" type="CheckBox" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Line" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_right = 40.0
 margin_bottom = 24.0
 hint_tooltip = "line"
@@ -158,7 +220,7 @@ pressed = true
 group = SubResource( 4 )
 icon = ExtResource( 3 )
 
-[node name="Rounded" type="CheckBox" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Rounded" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 28.0
 margin_right = 40.0
 margin_bottom = 52.0
@@ -166,15 +228,15 @@ hint_tooltip = "rounded"
 group = SubResource( 4 )
 icon = ExtResource( 2 )
 
-[node name="Thick" type="CheckBox" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Thick" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 56.0
 margin_right = 40.0
 margin_bottom = 80.0
 hint_tooltip = "thick"
 group = SubResource( 4 )
-icon = ExtResource( 3 )
+icon = ExtResource( 18 )
 
-[node name="WidthCurve" type="CheckBox" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="WidthCurve" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 84.0
 margin_right = 40.0
 margin_bottom = 108.0
@@ -182,7 +244,7 @@ hint_tooltip = "width curve"
 group = SubResource( 4 )
 icon = ExtResource( 13 )
 
-[node name="Dash" type="CheckBox" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Dash" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 112.0
 margin_right = 40.0
 margin_bottom = 136.0
@@ -190,7 +252,7 @@ hint_tooltip = "dash"
 group = SubResource( 4 )
 icon = ExtResource( 16 )
 
-[node name="Underline" type="CheckBox" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Underline" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 140.0
 margin_right = 40.0
 margin_bottom = 164.0
@@ -198,12 +260,12 @@ hint_tooltip = "underline, best with full value colors"
 group = SubResource( 4 )
 icon = ExtResource( 7 )
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 168.0
 margin_right = 40.0
 margin_bottom = 172.0
 
-[node name="Gradient" type="CheckBox" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Gradient" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 176.0
 margin_right = 40.0
 margin_bottom = 200.0
@@ -211,7 +273,7 @@ hint_tooltip = "gradient"
 group = SubResource( 4 )
 icon = ExtResource( 9 )
 
-[node name="Rainbow" type="CheckBox" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Rainbow" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 204.0
 margin_right = 40.0
 margin_bottom = 228.0
@@ -219,7 +281,7 @@ hint_tooltip = "rainbow"
 group = SubResource( 4 )
 icon = ExtResource( 14 )
 
-[node name="Fence" type="CheckBox" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Fence" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 232.0
 margin_right = 40.0
 margin_bottom = 256.0
@@ -227,7 +289,7 @@ hint_tooltip = "width curve"
 group = SubResource( 4 )
 icon = ExtResource( 8 )
 
-[node name="Road" type="CheckBox" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Road" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 260.0
 margin_right = 40.0
 margin_bottom = 284.0
@@ -235,12 +297,12 @@ hint_tooltip = "road"
 group = SubResource( 4 )
 icon = ExtResource( 5 )
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 288.0
 margin_right = 40.0
 margin_bottom = 292.0
 
-[node name="Red" type="CheckBox" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Red" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 296.0
 margin_right = 40.0
 margin_bottom = 320.0
@@ -248,7 +310,7 @@ hint_tooltip = "red subtraction"
 group = SubResource( 4 )
 icon = ExtResource( 4 )
 
-[node name="Green" type="CheckBox" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Green" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 324.0
 margin_right = 40.0
 margin_bottom = 348.0
@@ -256,7 +318,7 @@ hint_tooltip = "green subtraction"
 group = SubResource( 4 )
 icon = ExtResource( 10 )
 
-[node name="Blue" type="CheckBox" parent="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Blue" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 352.0
 margin_right = 40.0
 margin_bottom = 376.0
@@ -264,34 +326,94 @@ hint_tooltip = "blue subtraction"
 group = SubResource( 4 )
 icon = ExtResource( 6 )
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer"]
 margin_left = 58.0
 margin_right = 1024.0
 margin_bottom = 558.0
 size_flags_horizontal = 3
+scroll_horizontal_enabled = false
 
-[node name="Canvas" parent="VBoxContainer/HBoxContainer/ColorRect" instance=ExtResource( 11 )]
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer/ScrollContainer"]
+margin_right = 966.0
+margin_bottom = 558.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
+[node name="Canvas" parent="VBoxContainer/HBoxContainer/ScrollContainer/ColorRect" instance=ExtResource( 11 )]
+
+[node name="Configuration" type="ConfirmationDialog" parent="."]
+margin_right = 200.0
+margin_bottom = 70.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Configuration"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="Configuration/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+columns = 2
+
+[node name="Label" type="Label" parent="Configuration/VBoxContainer/GridContainer"]
+margin_right = 73.0
+margin_bottom = 14.0
+text = "background"
+
+[node name="BackgroundPickerButton" type="ColorPickerButton" parent="Configuration/VBoxContainer/GridContainer"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "c"
+color = Color( 1, 1, 1, 1 )
+
+[node name="Label2" type="Label" parent="Configuration/VBoxContainer/GridContainer"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "height"
+
+[node name="Height" type="SpinBox" parent="Configuration/VBoxContainer/GridContainer"]
+margin_right = 74.0
+margin_bottom = 24.0
+max_value = 4096.0
+
+[node name="Label3" type="Label" parent="Configuration/VBoxContainer/GridContainer"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "pages"
+
+[node name="Pages" type="SpinBox" parent="Configuration/VBoxContainer/GridContainer"]
+margin_right = 74.0
+margin_bottom = 24.0
+min_value = 1.0
+value = 1.0
+
+[connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/OK" to="." method="_on_OK_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/Export" to="." method="_on_Export_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/Capture" to="." method="_on_Capture_pressed"]
 [connection signal="color_changed" from="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer/ColorPickerButton" to="." method="_on_ColorPickerButton_color_changed"]
 [connection signal="toggled" from="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer/Erase" to="." method="_on_Erase_toggled"]
 [connection signal="value_changed" from="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer/PerpendicularDistance" to="." method="_on_PerpendicularDistance_value_changed"]
 [connection signal="toggled" from="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer/ToggleMode" to="." method="_on_ToggleMode_toggled"]
+[connection signal="toggled" from="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer/MoveFront" to="." method="_on_MoveFront_toggled"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/Undo" to="." method="_on_Undo_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/Redo" to="." method="_on_Redo_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/Clear" to="." method="_on_Clear_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Line" to="." method="_on_Line_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Rounded" to="." method="_on_Rounded_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Thick" to="." method="_on_Thick_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/WidthCurve" to="." method="_on_WidthCurve_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Dash" to="." method="_on_Dash_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Underline" to="." method="_on_Underline_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Gradient" to="." method="_on_Gradient_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Rainbow" to="." method="_on_Rainbow_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Fence" to="." method="_on_Fence_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Road" to="." method="_on_Road_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Red" to="." method="_on_Red_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Green" to="." method="_on_Green_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Blue" to="." method="_on_Blue_pressed"]
-[connection signal="drawing" from="VBoxContainer/HBoxContainer/ColorRect/Canvas" to="." method="_on_Canvas_drawing"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer2/VBoxContainer/IncreaseWidth" to="." method="_on_IncreaseWidth_pressed"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer2/VBoxContainer/Width" to="." method="_on_Width_item_selected"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer2/VBoxContainer/DecreaseWidth" to="." method="_on_DecreaseWidth_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Line" to="." method="_on_Line_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Rounded" to="." method="_on_Rounded_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Thick" to="." method="_on_Thick_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/WidthCurve" to="." method="_on_WidthCurve_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Dash" to="." method="_on_Dash_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Underline" to="." method="_on_Underline_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Gradient" to="." method="_on_Gradient_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Rainbow" to="." method="_on_Rainbow_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Fence" to="." method="_on_Fence_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Road" to="." method="_on_Road_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Red" to="." method="_on_Red_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Green" to="." method="_on_Green_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Blue" to="." method="_on_Blue_pressed"]
+[connection signal="drawing" from="VBoxContainer/HBoxContainer/ScrollContainer/ColorRect/Canvas" to="." method="_on_Canvas_drawing"]
+[connection signal="color_changed" from="Configuration/VBoxContainer/GridContainer/BackgroundPickerButton" to="." method="_on_BackgroundPickerButton_color_changed"]
+[connection signal="value_changed" from="Configuration/VBoxContainer/GridContainer/Height" to="." method="_on_Height_value_changed"]
+[connection signal="value_changed" from="Configuration/VBoxContainer/GridContainer/Pages" to="." method="_on_Pages_value_changed"]
