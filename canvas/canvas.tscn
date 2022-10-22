@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://canvas/canvas.gd" type="Script" id=1]
+[ext_resource path="res://canvas/layer.tscn" type="PackedScene" id=2]
 
 [node name="Canvas" type="TextureButton"]
 anchor_right = 1.0
@@ -9,6 +10,8 @@ rect_clip_content = true
 expand = true
 stretch_mode = 2
 script = ExtResource( 1 )
+
+[node name="Layer" parent="." instance=ExtResource( 2 )]
 
 [connection signal="button_down" from="." to="." method="_on_Canvas_button_down"]
 [connection signal="button_up" from="." to="." method="_on_Canvas_button_up"]

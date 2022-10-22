@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://canvas/line.gd" type="Script" id=1]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 2
@@ -7,3 +9,4 @@ blend_mode = 2
 material = SubResource( 1 )
 default_color = Color( 1, 0, 0, 1 )
 antialiased = true
+script = ExtResource( 1 )
