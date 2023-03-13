@@ -22,3 +22,8 @@ func add_point_sparsely(point):
 			add_point(point)
 		else:
 			points_saved+=1
+
+#func _draw():
+#	if current_line and current_line.points:
+#		for point in current_line.points:
+#			draw_circle(point, 4, Color.red)

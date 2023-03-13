@@ -1,15 +1,13 @@
 extends Node2D
 
 export(PackedScene) var line = preload("line.tscn")
-var current_line
 var undo_redo = UndoRedo.new()
 
-func add_line(modulate = Color.white):
+func add_line():
 #	print("points saved: ", float(current_line.points_saved)  / (current_line.points_saved + current_line.points.size()))
-	current_line = line.instance()
-	current_line.modulate = modulate
+	var current_line = line.instance()
 	current_line.points = [get_local_mouse_position(), get_local_mouse_position()]
-	
+
 	undo_redo.create_action("instance_line")
 	undo_redo.add_do_reference(current_line) # frees removed lines when clearing history
 	undo_redo.add_do_method(self, "add_child", current_line) 

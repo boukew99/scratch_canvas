@@ -11,9 +11,8 @@ config_version=4
 [application]
 
 config/name="scratch_canvas"
-run/main_scene="res://scratch_drawer/scratch_drawer.tscn"
+run/main_scene="res://canvas/canvas.tscn"
 run/low_processor_mode=true
-config/icon="res://canvas/scratch_canvas.png"
 
 [gdnative]
 
